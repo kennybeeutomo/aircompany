@@ -6,10 +6,6 @@ import Planes.Plane;
 
 import java.util.*;
 
-// version: 1.1
-// made by Vitali Shulha
-// 4-Jan-2019
-
 public class Airport {
 	private List<? extends Plane> planes;
 
@@ -93,11 +89,6 @@ public class Airport {
 		return this;
 	}
 
-	/**
-	 * Sorts by max speed
-	 * 
-	 * @return Airport
-	 */
 	public Airport sortByMaxSpeed() {
 		Collections.sort(planes, new Comparator<Plane>() {
 			public int compare(Plane o1, Plane o2) {
@@ -135,7 +126,6 @@ public class Airport {
 				'}';
 	}
 
-	// Constructor
 	public Airport(List<? extends Plane> planes) {
 		this.planes = planes;
 	}
