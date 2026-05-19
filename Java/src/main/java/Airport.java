@@ -9,15 +9,14 @@ import java.util.*;
 public class Airport {
 	private List<? extends Plane> planes;
 
-	public List<PassengerPlane> getPasPl() {
-		List<? extends Plane> l = this.planes;
-		List<PassengerPlane> x = new ArrayList<>();
-		for (Plane p : l) {
-			if (p instanceof PassengerPlane) {
-				x.add((PassengerPlane) p);
+	public List<PassengerPlane> getPassengerPlane() {
+		List<PassengerPlane> passengerPlanes = new ArrayList<>();
+		for (Plane plane : planes) {
+			if (plane instanceof PassengerPlane) {
+				passengerPlanes.add((PassengerPlane) plane);
 			}
 		}
-		return x;
+		return passengerPlanes;
 	}
 
 	public List<MilitaryPlane> getMilitaryPlanes() {
@@ -31,7 +30,7 @@ public class Airport {
 	}
 
 	public PassengerPlane getPassengerPlaneWithMaxPassengersCapacity() {
-		List<PassengerPlane> passengerPlanes = getPasPl();
+		List<PassengerPlane> passengerPlanes = getPassengerPlane();
 		PassengerPlane planeWithMaxCapacity = passengerPlanes.get(0);
 		for (int i = 0; i < passengerPlanes.size(); i++) {
 			if (passengerPlanes.get(i).getPassengersCapacity() > planeWithMaxCapacity.getPassengersCapacity()) {
