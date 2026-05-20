@@ -4,7 +4,6 @@ import java.util.Objects;
 
 public class PassengerPlane extends Plane {
 
-	// =================FIELDS=================
 	private int passengersCapacity;
 
 	public PassengerPlane(PlaneSpecification specification, int passengersCapacity) {
@@ -12,7 +11,6 @@ public class PassengerPlane extends Plane {
     	this.passengersCapacity = passengersCapacity;
 	}
 
-	// =================METHODS=================
 	public int getPassengersCapacity() {
 		return passengersCapacity;
 	}
@@ -23,13 +21,6 @@ public class PassengerPlane extends Plane {
 				", passengersCapacity=" + passengersCapacity +
 						'}');
 	}
-
-	// @Override
-	// public String toString() {
-	// return super.toString().replace("}",
-	// ", passengersCapacity=" + passengersCapacity +
-	// '}');
-	// }
 
 	@Override
 	public boolean equals(Object o) {
