@@ -7,11 +7,9 @@ public class PassengerPlane extends Plane {
 	// =================FIELDS=================
 	private int passengersCapacity;
 
-	// =================CONSTRUCTORS=================
-	public PassengerPlane(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity,
-			int passengersCapacity) {
-		super(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
-		this.passengersCapacity = passengersCapacity;
+	public PassengerPlane(PlaneSpecification specification, int passengersCapacity) {
+    	super(specification);
+    	this.passengersCapacity = passengersCapacity;
 	}
 
 	// =================METHODS=================
