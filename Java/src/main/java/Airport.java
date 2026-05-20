@@ -9,24 +9,22 @@ import java.util.*;
 public class Airport {
 	private List<? extends Plane> planes;
 
-	public List<PassengerPlane> getPassengerPlane() {
-		List<PassengerPlane> passengerPlanes = new ArrayList<>();
-		for (Plane plane : planes) {
-			if (plane instanceof PassengerPlane) {
-				passengerPlanes.add((PassengerPlane) plane);
+	private <T extends Plane> List<T> getPlanesByType(Class<T> type) {
+		List<T> result = new ArrayList<>();
+		for (Plane plane : this.planes) {
+			if (type.isInstance(plane)) {
+				result.add(type.cast(plane));
 			}
 		}
-		return passengerPlanes;
+		return result;
+	}
+
+	public List<PassengerPlane> getPassengerPlane() {
+		return getPlanesByType(PassengerPlane.class);
 	}
 
 	public List<MilitaryPlane> getMilitaryPlanes() {
-		List<MilitaryPlane> militaryPlanes = new ArrayList<>();
-		for (Plane plane : planes) {
-			if (plane instanceof MilitaryPlane) {
-				militaryPlanes.add((MilitaryPlane) plane);
-			}
-		}
-		return militaryPlanes;
+		return getPlanesByType(MilitaryPlane.class);
 	}
 
 	public PassengerPlane getPassengerPlaneWithMaxPassengersCapacity() {
@@ -61,13 +59,7 @@ public class Airport {
 	}
 
 	public List<experimentalPlane> getExperimentalPlanes() {
-		List<experimentalPlane> experimentalPlanes = new ArrayList<>();
-		for (Plane plane : planes) {
-			if (plane instanceof experimentalPlane) {
-				experimentalPlanes.add((experimentalPlane) plane);
-			}
-		}
-		return experimentalPlanes;
+		return getPlanesByType(experimentalPlane.class);
 	}
 
 	public Airport sortByMaxDistance() {
