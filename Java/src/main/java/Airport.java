@@ -63,31 +63,31 @@ public class Airport {
 	}
 
 	public Airport sortByMaxDistance() {
-		Collections.sort(planes, new Comparator<Plane>() {
-			public int compare(Plane o1, Plane o2) {
-				return o1.Get_Max_Flight_Distance() - o2.Get_Max_Flight_Distance();
-			}
-		});
-		return this;
-	}
+        Collections.sort(planes, new Comparator<Plane>() {
+            public int compare(Plane o1, Plane o2) {
+                return o1.getMaxFlightDistance() - o2.getMaxFlightDistance();
+            }
+        });
+        return this;
+    }
 
-	public Airport sortByMaxSpeed() {
-		Collections.sort(planes, new Comparator<Plane>() {
-			public int compare(Plane o1, Plane o2) {
-				return o1.getMS() - o2.getMS();
-			}
-		});
-		return this;
-	}
+    public Airport sortByMaxSpeed() {
+        Collections.sort(planes, new Comparator<Plane>() {
+            public int compare(Plane o1, Plane o2) {
+                return o1.getMaxSpeed() - o2.getMaxSpeed();
+            }
+        });
+        return this;
+    }
 
-	public Airport sortByMaxLoadCapacity() {
-		Collections.sort(planes, new Comparator<Plane>() {
-			public int compare(Plane o1, Plane o2) {
-				return o1.getMinLoadCapacity() - o2.getMinLoadCapacity();
-			}
-		});
-		return this;
-	}
+    public Airport sortByMaxLoadCapacity() {
+        Collections.sort(planes, new Comparator<Plane>() {
+            public int compare(Plane o1, Plane o2) {
+                return o1.getMaxLoadCapacity() - o2.getMaxLoadCapacity();
+            }
+        });
+        return this;
+    }
 
 	public List<? extends Plane> getPlanes() {
 		return planes;

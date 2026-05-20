@@ -2,11 +2,11 @@ package Planes;
 
 public class PlaneSpecification {
     private final String model;
-    private final int maxSpeed;
-    private final int maxFlightDistance;
-    private final int maxLoadCapacity;
+    private final Speed maxSpeed;            
+    private final Distance maxFlightDistance;
+    private final Weight maxLoadCapacity;
 
-    public PlaneSpecification(String model, int maxSpeed, int maxFlightDistance, int maxLoadCapacity) {
+    public PlaneSpecification(String model, Speed maxSpeed, Distance maxFlightDistance, Weight maxLoadCapacity) {
         this.model = model;
         this.maxSpeed = maxSpeed;
         this.maxFlightDistance = maxFlightDistance;
@@ -14,7 +14,7 @@ public class PlaneSpecification {
     }
 
     public String getModel() { return model; }
-    public int getMaxSpeed() { return maxSpeed; }
-    public int getMaxFlightDistance() { return maxFlightDistance; }
-    public int getMaxLoadCapacity() { return maxLoadCapacity; }
+    public int getMaxSpeed() { return maxSpeed.getValue(); }
+    public int getMaxFlightDistance() { return maxFlightDistance.getValue(); }
+    public int getMaxLoadCapacity() { return maxLoadCapacity.getValue(); }
 }

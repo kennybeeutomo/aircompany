@@ -10,37 +10,35 @@ public abstract class Plane {
     }
 
 	public String getModel() { return specification.getModel(); }
-	public int getMaxSpeed() { return specification.maxSpeed; }
-    public int getMaxFlightDistance() { return specification.maxFlightDistance; }
-    public int getMaxLoadCapacity() { return specification.maxLoadCapacity; }
+	public int getMaxSpeed() { return specification.getMaxSpeed(); }
+    public int getMaxFlightDistance() { return specification.getMaxFlightDistance(); }
+    public int getMaxLoadCapacity() { return specification.getMaxLoadCapacity(); }
 
 	@Override
-	public String toString() {
-		return "Plane{" +
-				"model='" + model + '\'' +
-				", maxSpeed=" + maxSpeed +
-				", maxFlightDistance=" + maxFlightDistance +
-				", maxLoadCapacity=" + maxLoadCapacity +
-				buildDetails() +
-				'}';
-	}
+    public String toString() {
+        return "Plane{" +
+                "model='" + getModel() + '\'' +
+                ", maxSpeed=" + getMaxSpeed() +
+                ", maxFlightDistance=" + getMaxFlightDistance() +
+                ", maxLoadCapacity=" + getMaxLoadCapacity() +
+                buildDetails() +
+                '}';
+    }
 
 	@Override
-	public boolean equals(Object o) {
-		if (this == o)
-			return true;
-		if (!(o instanceof Plane))
-			return false;
-		Plane plane = (Plane) o;
-		return maxSpeed == plane.maxSpeed &&
-				maxFlightDistance == plane.maxFlightDistance &&
-				maxLoadCapacity == plane.maxLoadCapacity &&
-				Objects.equals(model, plane.model);
-	}
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Plane)) return false;
+        Plane plane = (Plane) o;
+        return getMaxSpeed() == plane.getMaxSpeed() &&
+                getMaxFlightDistance() == plane.getMaxFlightDistance() &&
+                getMaxLoadCapacity() == plane.getMaxLoadCapacity() &&
+                Objects.equals(getModel(), plane.getModel());
+    }
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+    	return Objects.hash(getModel(), getMaxSpeed(), getMaxFlightDistance(), getMaxLoadCapacity());
 	}
 
 	protected String buildDetails() {
