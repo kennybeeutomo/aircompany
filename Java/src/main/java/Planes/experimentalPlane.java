@@ -3,12 +3,12 @@ package Planes;
 import models.ClassificationLevel;
 import models.ExperimentalTypes;
 
-public class experimentalPlane extends Plane {
+public class ExperimentalPlane extends Plane {
 
 	private ExperimentalTypes type;
 	private ClassificationLevel classificationLevel;
 
-	public experimentalPlane(PlaneSpecification specification, ExperimentalTypes type, ClassificationLevel classificationLevel) {
+	public ExperimentalPlane(PlaneSpecification specification, ExperimentalTypes type, ClassificationLevel classificationLevel) {
     	super(specification);
     	this.type = type;
 		this.classificationLevel = classificationLevel;
