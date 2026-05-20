@@ -21,6 +21,7 @@ public abstract class Plane {
 				", maxSpeed=" + maxSpeed +
 				", maxFlightDistance=" + maxFlightDistance +
 				", maxLoadCapacity=" + maxLoadCapacity +
+				buildDetails() +
 				'}';
 	}
 
@@ -40,5 +41,9 @@ public abstract class Plane {
 	@Override
 	public int hashCode() {
 		return Objects.hash(model, maxSpeed, maxFlightDistance, maxLoadCapacity);
+	}
+
+	protected String buildDetails() {
+    	return "";
 	}
 }

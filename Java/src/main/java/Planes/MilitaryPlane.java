@@ -18,10 +18,8 @@ public class MilitaryPlane extends Plane {
 	}
 
 	@Override
-	public String toString() {
-		return super.toString().replace("}",
-				", type=" + type +
-						'}');
+	protected String buildDetails() {
+		return ", type=" + type;
 	}
 
 	@Override
