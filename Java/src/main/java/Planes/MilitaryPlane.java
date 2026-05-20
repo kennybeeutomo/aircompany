@@ -9,8 +9,8 @@ public class MilitaryPlane extends Plane {
 	private MilitaryType type;
 
 	public MilitaryPlane(PlaneSpecification specification, MilitaryType type) {
-    	super(specification);
-    	this.type = type;
+		super(specification);
+		this.type = type;
 	}
 
 	public MilitaryType getType() {

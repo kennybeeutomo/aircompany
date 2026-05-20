@@ -1,5 +1,5 @@
-import Planes.experimentalPlane;
 import models.MilitaryType;
+import Planes.ExperimentalPlane;
 import Planes.MilitaryPlane;
 import Planes.PassengerPlane;
 import Planes.Plane;
@@ -58,36 +58,36 @@ public class Airport {
 		return getMilitaryPlanesByType(MilitaryType.BOMBER);
 	}
 
-	public List<experimentalPlane> getExperimentalPlanes() {
-		return getPlanesByType(experimentalPlane.class);
+	public List<ExperimentalPlane> getExperimentalPlanes() {
+		return getPlanesByType(ExperimentalPlane.class);
 	}
 
 	public Airport sortByMaxDistance() {
-        Collections.sort(planes, new Comparator<Plane>() {
-            public int compare(Plane o1, Plane o2) {
-                return o1.getMaxFlightDistance() - o2.getMaxFlightDistance();
-            }
-        });
-        return this;
-    }
+		Collections.sort(planes, new Comparator<Plane>() {
+			public int compare(Plane o1, Plane o2) {
+				return o1.getMaxFlightDistance() - o2.getMaxFlightDistance();
+			}
+		});
+		return this;
+	}
 
-    public Airport sortByMaxSpeed() {
-        Collections.sort(planes, new Comparator<Plane>() {
-            public int compare(Plane o1, Plane o2) {
-                return o1.getMaxSpeed() - o2.getMaxSpeed();
-            }
-        });
-        return this;
-    }
+	public Airport sortByMaxSpeed() {
+		Collections.sort(planes, new Comparator<Plane>() {
+			public int compare(Plane o1, Plane o2) {
+				return o1.getMaxSpeed() - o2.getMaxSpeed();
+			}
+		});
+		return this;
+	}
 
-    public Airport sortByMaxLoadCapacity() {
-        Collections.sort(planes, new Comparator<Plane>() {
-            public int compare(Plane o1, Plane o2) {
-                return o1.getMaxLoadCapacity() - o2.getMaxLoadCapacity();
-            }
-        });
-        return this;
-    }
+	public Airport sortByMaxLoadCapacity() {
+		Collections.sort(planes, new Comparator<Plane>() {
+			public int compare(Plane o1, Plane o2) {
+				return o1.getMaxLoadCapacity() - o2.getMaxLoadCapacity();
+			}
+		});
+		return this;
+	}
 
 	public List<? extends Plane> getPlanes() {
 		return planes;

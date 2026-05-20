@@ -7,8 +7,8 @@ public class PassengerPlane extends Plane {
 	private int passengersCapacity;
 
 	public PassengerPlane(PlaneSpecification specification, int passengersCapacity) {
-    	super(specification);
-    	this.passengersCapacity = passengersCapacity;
+		super(specification);
+		this.passengersCapacity = passengersCapacity;
 	}
 
 	public int getPassengersCapacity() {

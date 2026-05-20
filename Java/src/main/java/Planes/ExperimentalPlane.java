@@ -1,5 +1,7 @@
 package Planes;
 
+import java.util.Objects;
+
 import models.ClassificationLevel;
 import models.ExperimentalTypes;
 
@@ -8,9 +10,10 @@ public class ExperimentalPlane extends Plane {
 	private ExperimentalTypes type;
 	private ClassificationLevel classificationLevel;
 
-	public ExperimentalPlane(PlaneSpecification specification, ExperimentalTypes type, ClassificationLevel classificationLevel) {
-    	super(specification);
-    	this.type = type;
+	public ExperimentalPlane(PlaneSpecification specification, ExperimentalTypes type,
+			ClassificationLevel classificationLevel) {
+		super(specification);
+		this.type = type;
 		this.classificationLevel = classificationLevel;
 	}
 
@@ -29,7 +32,7 @@ public class ExperimentalPlane extends Plane {
 		if (!(o instanceof ExperimentalPlane))
 			return false;
 		if (!super.equals(o))
-			return false; 
+			return false;
 		ExperimentalPlane that = (ExperimentalPlane) o;
 		return type == that.type && classificationLevel == that.classificationLevel;
 	}
