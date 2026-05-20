@@ -41,29 +41,23 @@ public class Airport {
 		return planeWithMaxCapacity;
 	}
 
-	public List<MilitaryPlane> getTransportMilitaryPlanes() {
-		List<MilitaryPlane> transportMilitaryPlanes = new ArrayList<>();
+	private List<MilitaryPlane> getMilitaryPlanesByType(MilitaryType type) {
+		List<MilitaryPlane> result = new ArrayList<>();
 		List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-		for (int i = 0; i < militaryPlanes.size(); i++) {
-			MilitaryPlane plane = militaryPlanes.get(i);
-			if (plane.getType() == MilitaryType.TRANSPORT) {
-				transportMilitaryPlanes.add(plane);
+		for (MilitaryPlane plane : militaryPlanes) {
+			if (plane.getType() == type) {
+				result.add(plane);
 			}
 		}
-		return transportMilitaryPlanes;
+		return result;
+	}
+
+	public List<MilitaryPlane> getTransportMilitaryPlanes() {
+		return getMilitaryPlanesByType(MilitaryType.TRANSPORT);
 	}
 
 	public List<MilitaryPlane> getBomberMilitaryPlanes() {
-		List<MilitaryPlane> bomberMilitaryPlanes = new ArrayList<>();
-		List<MilitaryPlane> militaryPlanes = getMilitaryPlanes();
-		for (int i = 0; i < militaryPlanes.size(); i++) {
-			MilitaryPlane plane = militaryPlanes.get(i);
-			if (plane.getType() == MilitaryType.BOMBER) {
-				bomberMilitaryPlanes.add(plane);
-			}
-		}
-		return bomberMilitaryPlanes;
-
+		return getMilitaryPlanesByType(MilitaryType.BOMBER);
 	}
 
 	public List<experimentalPlane> getExperimentalPlanes() {
